@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.ibb.co/Q8xSRkp/Books-1.jpg",
+      "review": "A chilling portrayal of a dystopian society where freedom is constrained and individuality suppressed. Orwell's prophetic vision continues to resonate.",
+      "totalPages": 328,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Dystopian", "Political"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 2,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://i.ibb.co/q5TKcbY/Books-2.jpg",
+      "review": "A poignant exploration of racial injustice and moral growth, narrated through the eyes of a young girl. A timeless classic.",
+      "totalPages": 336,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Coming of Age", "Social Issues"],
+      "publisher": "J.B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 3,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://i.ibb.co/KwvnQSL/Books-3.jpg",
+      "review": "A mesmerizing tale of love, greed, and the pursuit of the American Dream set in the Jazz Age. Fitzgerald's prose sparkles with elegance.",
+      "totalPages": 180,
+      "rating": 4.7,
+      "category": "Fiction",
+      "tags": ["Romance", "American Dream"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://i.ibb.co/jhQw6Rd/Books-4.jpg",
+      "review": "Holden Caulfield's rebellious journey through New York City is both poignant and timeless, capturing the angst of adolescence.",
+      "totalPages": 224,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Coming of Age", "Teen"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "image": "https://i.ibb.co/8XJr03N/Books-5.jpg",
+      "review": "A delightful comedy of manners that explores themes of love, marriage, and social status in Regency-era England.",
+      "totalPages": 279,
+      "rating": 4.9,
+      "category": "Fiction",
+      "tags": ["Romance", "Satire"],
+      "publisher": "T. Egerton, Whitehall",
+      "yearOfPublishing": 1813
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "image": "https://i.ibb.co/C2Wmm9M/Books-6.jpg",
+      "review": "A monumental epic that transports readers to the fantastical realm of Middle-earth, brimming with adventure, heroism, and rich mythology.",
+      "totalPages": 1178,
+      "rating": 5.0,
+      "category": "Fantasy",
+      "tags": ["Adventure", "High Fantasy"],
+      "publisher": "Allen & Unwin",
+      "yearOfPublishing": 1954
+    }
+  ]
+  
