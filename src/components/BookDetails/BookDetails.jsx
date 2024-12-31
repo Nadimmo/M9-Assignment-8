@@ -4,70 +4,76 @@ import { useState } from "react";
 // react toast 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-  
-const BookDetails = () => {
-    const books = useLoaderData()
-    const {bookId} = useParams()
-    const idInt = parseInt(bookId)
-    const book = books.find(book => book.bookId === idInt)
-    // console.log(book)
-    const {image, author, rating, review, yearOfPublishing, publisher, totalPages , category, tags, bookName} = book
-    const [bookAdd, setBookAdd] = useState(false);
-    const [wishlistAdd, setWishListsAdd] = useState(false)
 
-    const handlerBook = ()=>{
-        saveToBookCart(idInt)
-        // toast condition
+const BookDetails = () => {
+    const books = useLoaderData();
+    const { bookId } = useParams();
+    const idInt = parseInt(bookId);
+    const book = books.find(book => book.bookId === idInt);
+    const { image, author, rating, review, yearOfPublishing, publisher, totalPages, category, tags, bookName } = book;
+    const [bookAdd, setBookAdd] = useState(false);
+    const [wishlistAdd, setWishListsAdd] = useState(false);
+
+    const handlerBook = () => {
+        saveToBookCart(idInt);
         if (!bookAdd) {
             setBookAdd(true);
             toast('You have applied successfully');
         } else {
-            toast('You have already applied'); // Alert toast if clicked again
+            toast('You have already applied');
         }
+    };
 
-    }
-    const handlerBook2 = ()=>{
-        saveToBookWishList(idInt)
-        // toast condition
+    const handlerBook2 = () => {
+        saveToBookWishList(idInt);
         if (!wishlistAdd) {
             setWishListsAdd(true);
             toast('You have applied successfully');
         } else {
-            toast('You have already applied'); // Alert toast if clicked again
+            toast('You have already applied');
         }
+    };
 
-    }
     return (
-        <div>
-            <h1 className="text-2xl font-bold text-center">Book Details</h1>
-            <br />
+        <div className="bg-gray-100 text-gray-800 min-h-screen">
+            <h1 className="text-3xl font-bold text-center py-4">Book Details</h1>
 
-            <div>
-                <div className="hero  bg-base-200 lg:p-10">
-                <div className="hero-content flex-col lg:flex-row">
-                    <img src={image} className=" lg:w-[340px] lg:h-[420px] rounded-lg shadow-2xl" />
-                    <div>
-                        <h1 className="text-5xl font-bold">{bookName}</h1>
-                        <p className="text-2xl border-b-2 mt-2 pb-4 border-dotted border-gray-300">Writer : {author}</p>
-                        <p className="text-lg border-b-2 mt-2 pb-4 border-dotted border-gray-300">{category}</p>                    
-                        <p className="py-6">Review : {review}</p>
-                        <div className="flex justify-between mt-2 border-b-2  pb-4 border-dotted border-gray-300">
-                            <p className="text-[#23BE0A]">#{tags[0]}</p>
-                            <p className="ml-2 text-[#23BE0A]">#{tags[0]}</p>
+            <div className="hero bg-white shadow-lg rounded-lg   p-6 lg:p-10">
+                <div className="hero-content flex flex-col lg:flex-row">
+                    <img src={image} className="lg:w-[340px] lg:h-[420px] rounded-lg shadow-xl hover:scale-105 transition-transform duration-300" />
+                    <div className="lg:ml-8">
+                        <h1 className="text-4xl font-bold mb-2 text-blue-700 hover:text-blue-900 transition-colors duration-300">{bookName}</h1>
+                        <p className="text-xl border-b-2 mt-2 pb-4 border-dotted border-gray-300">Writer: <span className="font-medium text-gray-700">{author}</span></p>
+                        <p className="text-lg border-b-2 mt-2 pb-4 border-dotted border-gray-300">Category: <span className="font-medium text-gray-700">{category}</span></p>
+                        <p className="py-6 text-gray-700">Review: {review}</p>
+                        <div className="flex justify-between mt-2 border-b-2 pb-4 border-dotted border-gray-300">
+                            <p className="text-green-600">#{tags[0]}</p>
+                            <p className="ml-2 text-green-600">#{tags[1] || tags[0]}</p>
                         </div>
-                        <div className="text-xl">
-                            <p>Number of Page : <span className="font-bold">{totalPages}</span> </p>
-                            <p>Publisher : <span className="font-bold">{publisher}</span></p>
-                            <p>Year of Publishing : <span className="font-bold">{yearOfPublishing}</span></p>
-                            <p>Rating : <span className="font-bold">{rating}</span></p>
+                        <div className="text-xl mt-4">
+                            <p>Number of Pages: <span className="font-bold text-gray-800">{totalPages}</span></p>
+                            <p>Publisher: <span className="font-bold text-gray-800">{publisher}</span></p>
+                            <p>Year of Publishing: <span className="font-bold text-gray-800">{yearOfPublishing}</span></p>
+                            <p>Rating: <span className="font-bold text-yellow-500">{rating}</span></p>
                         </div>
-                        <div className="mt-4">
-                            <Link><button onClick={handlerBook} className="btn border-2 border-sky-200 lg:w-[15%] bg-opacity-0">Read</button></Link>
-                            <Link><button onClick={handlerBook2}  className="btn hover:text-black text-white border-sky-200 lg:w-[15%] ml-2 bg-[#50B1C9]">Wishlist</button></Link>
-                        </div> 
-                        <ToastContainer></ToastContainer>
+                        <div className="mt-6 flex">
+                            <Link>
+                                <button 
+                                    onClick={handlerBook} 
+                                    className="btn bg-blue-500 text-white hover:bg-blue-700 transition-colors duration-300 px-4 py-2 rounded-md mr-2">
+                                    Read
+                                </button>
+                            </Link>
+                            <Link>
+                                <button 
+                                    onClick={handlerBook2}  
+                                    className="btn bg-green-500 text-white hover:bg-green-700 transition-colors duration-300 px-4 py-2 rounded-md">
+                                    Wishlist
+                                </button>
+                            </Link>
+                        </div>
+                        <ToastContainer />
                     </div>
-                </div>
                 </div>
             </div>
         </div>
