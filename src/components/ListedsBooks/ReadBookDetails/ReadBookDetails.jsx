@@ -4,50 +4,62 @@ import { BiGroup } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
-const ReadBookDetails = ({readBook}) => {
-    // console.log(displayBook)
-        const {image, author, rating, yearOfPublishing, publisher, totalPages , category, tags, bookName} = readBook
+const ReadBookDetails = ({ readBook }) => {
+  const { image, author, rating, yearOfPublishing, publisher, totalPages, category, tags, bookName, bookId } = readBook;
 
-    return (
-        <div>
-            <div className="hero relative right-7 lg:right-0 lg:p-10">
-            <div className="hero-content flex-col lg:flex-row border-2 border-gray-300 rounded-xl  w-[320px] lg:w-[100%]">
-                    <img src={image} className="rounded-lg shadow-2xl lg:mr-36 bg-base-200" />
-                    <div >
-                        <h1 className="text-xl font-bold">{bookName}</h1>
-                        <p className="text-lg  mt-2">Writer : {author}</p>
-                        <div className="mt-2 lg:flex">
-                            <div className="lg:flex">
-                                <p className="font-bold text-black ml-5 lg:ml-0">Tag</p>
-                                <p className="text-[#23BE0A] ml-4">#{tags[0]}</p>
-                            </div>
-                            <div className="lg:flex">
-                                <p className=" text-[#23BE0A] ml-4">#{tags[0]}</p>
-                                <p className="flex ml-4"> <span className="text-2xl"><CiLocationOn />
-                                </span > Year of Publishing : <span className="font-bold ">{yearOfPublishing}</span></p>
-                            </div>
-                            
-                        </div>
+  return (
+    <div className="p-5">
+      <div className="hero relative right-7 lg:right-0 lg:p-10">
+        <div className="hero-content flex-col lg:flex-row border border-gray-300 rounded-xl shadow-lg bg-white hover:shadow-2xl transition-shadow duration-300 w-[320px] lg:w-[100%]">
+          <img
+            src={image}
+            alt="Book Cover"
+            className="rounded-lg shadow-lg lg:mr-20 bg-gray-100  hover:scale-105 transition-transform duration-300"
+          />
+          <div className="p-5 lg:p-0">
+            <h1 className="text-2xl font-bold text-gray-800 hover:text-blue-500 transition-colors duration-300">{bookName}</h1>
+            <p className="text-lg mt-2 text-gray-600">Writer: <span className="font-medium">{author}</span></p>
 
-                        <div className=" lg:flex mt-3 border-b-2  pb-4 border-dotted border-gray-300">
-                            <p className="flex ml-5 lg:ml-0"> <span className="text-2xl"><BiGroup /></span> 
-                            <span className="font-bold ml-2"> {publisher}</span></p>
-
-                            <p className="ml-5 flex"> <span className="text-2xl"><MdContactPage /></span> 
-                            <span className="font-bold ml-2">{totalPages}</span> </p>
-                        </div>
-            
-                        <div className="text-lg grid grid-cols-2 lg:grid-cols-3 mt-5">
-                            <p className="text-[#328EFF] btn bg-[#328EFF] bg-opacity-15 rounded-3xl">Category : <span>{category}</span> </p>
-                            <p className="ml-5  btn  text-[#FFAC33]  bg-[#FFAC33] bg-opacity-15 rounded-3xl">Rating : {rating}</p>
-                            <Link to={`/books/${readBook.bookId}`}><p className="mt-5 ml-16 w-[100%] lg:ml-5 lg:mt-0 btn bg-[#23BE0A] rounded-3xl text-white">View Details</p></Link>
-                        </div>
-                    </div>
-                </div>
+            <div className="mt-4 space-y-2">
+              <div className="flex items-center">
+                <p className="font-bold text-gray-700">Tag:</p>
+                <p className="text-[#23BE0A] ml-4">#{tags[0]}</p>
+              </div>
+              <div className="flex items-center">
+                <CiLocationOn className="text-2xl text-gray-600" />
+                <p className="ml-4 text-gray-700">Year of Publishing: <span className="font-bold">{yearOfPublishing}</span></p>
+              </div>
             </div>
-            <br />
+
+            <div className="flex flex-wrap items-center mt-4 border-b border-dotted border-gray-300 pb-4">
+              <p className="flex items-center mr-5">
+                <BiGroup className="text-2xl text-gray-600" />
+                <span className="font-bold text-gray-800 ml-2">{publisher}</span>
+              </p>
+              <p className="flex items-center">
+                <MdContactPage className="text-2xl text-gray-600" />
+                <span className="font-bold text-gray-800 ml-2">{totalPages} pages</span>
+              </p>
+            </div>
+
+            <div className="lg:grid grid-cols-3 gap-4 mt-5">
+              <p className="text-[#328EFF] bg-[#328EFF] bg-opacity-15 py-2 px-4 rounded-3xl text-center shadow-md hover:bg-[#328EFF] hover:text-white transition-colors duration-300">
+                Category: <span>{category}</span>
+              </p>
+              <p className="text-[#FFAC33] bg-[#FFAC33] bg-opacity-15 py-2 px-4 rounded-3xl text-center shadow-md hover:bg-[#FFAC33] hover:text-white transition-colors duration-300  lg:mt-0 mt-2">
+                Rating: {rating}
+              </p>
+              <Link to={`/books/${bookId}`}>
+                <p className="bg-[#23BE0A] py-2 px-4 rounded-3xl text-white text-center shadow-md hover:bg-green-700 transition-colors duration-300  lg:mt-0 mt-2">
+                  View Details
+                </p>
+              </Link>
+            </div>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ReadBookDetails;
