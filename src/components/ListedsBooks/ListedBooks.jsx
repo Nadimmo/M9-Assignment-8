@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link, Outlet } from "react-router-dom";
 
 const ListedBooks = () => {
     const [tabIndex, setTabIndex] = useState(0)
     return (
         <div className="mx-2">
+            <Helmet>
+                <title>Book List Page</title>
+            </Helmet>
             <h1 className=" rounded-xl text-4xl font-bold text-center bg-base-200 text-black h-[60px] pt-2"> Books</h1>
             <br /><br />
 

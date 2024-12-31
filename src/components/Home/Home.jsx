@@ -2,9 +2,13 @@
 import { Link } from "react-router-dom";
 import banner from "../../../src/imgae/pngwing 1.jpeg"
 import Books from "../Books/Books";
+import { Helmet } from "react-helmet";
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>Home Page</title>
+            </Helmet>
             <div className="mx-4 lg:border bg-white rounded-xl">
                 <div className="hero">
                     <div className="hero-content flex-col lg:flex-row-reverse">

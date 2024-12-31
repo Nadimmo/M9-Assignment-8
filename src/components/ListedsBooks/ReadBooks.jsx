@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData} from "react-router-dom";
 import { getStoredToBookCart } from "../../utilitis/locatstorage";
 import ReadBookDetails from "./ReadBookDetails/ReadBookDetails";
+import { Helmet } from "react-helmet";
 
 const ReadBooks = () => {
     const reads = useLoaderData()
@@ -29,6 +30,9 @@ const ReadBooks = () => {
     // console.log(readBooks)
     return (
         <div>
+            <Helmet>
+                <title>Read Book</title>
+            </Helmet>
             <div>
                 {
                     readBooks.map(readBook => <ReadBookDetails key={readBook.bookId} readBook={readBook}></ReadBookDetails>)

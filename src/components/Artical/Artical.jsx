@@ -1,7 +1,11 @@
+import { Helmet } from 'react-helmet';
 import logo from '../../imgae/The_Guardian_(novel).jpg';
 const Artical = () => {
     return (
         <div>
+            <Helmet>
+                <title>Article Page</title>
+            </Helmet>
             <h1 className='text-2xl mt-2 text-center font-bold italic'>The Guardian Book (novel)</h1>
             <br /><br />
             <div>

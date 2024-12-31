@@ -16,6 +16,7 @@ import PageReads from './components/PageRead/PageReads';
 import Artical from './components/Artical/Artical';
 import More from './components/More/More';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -68,6 +69,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>,
 )

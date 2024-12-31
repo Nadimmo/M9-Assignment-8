@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData} from "react-router-dom";
 import {getStoredWishList } from "../../utilitis/locatstorage";
 import WishlistBookDetails from "./WishlistBookDetails/WishlistBookDetails";
+import { Helmet } from "react-helmet";
 const WishlistBooks = () => {
     const wishlistsAdd = useLoaderData()
 
@@ -28,6 +29,9 @@ const WishlistBooks = () => {
     // console.log(readBooks)
     return (
         <div>
+            <Helmet>
+                <title>Wish List Book</title>
+            </Helmet>
             <div>
                 {
                     wishlists.map(wishlist => <WishlistBookDetails key={wishlist.bookId} wishlist={wishlist}></WishlistBookDetails>)

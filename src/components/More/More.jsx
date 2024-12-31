@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet";
+
 const More = () => {
     return (
         <div>
+            <Helmet>
+                <title>More About</title>
+            </Helmet>
             <h1 className='text-2xl mt-2 text-center font-bold italic'>Exploring Literary Worlds: The Guardian Book Reviews Unveiled</h1>
             <br /><br />
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useLoaderData } from 'react-router';
 import PageRead from './PageRead'; // Assuming PageRead component is in the same directory
 import { getStoredToBookCart } from '../../utilitis/locatstorage';
+import { Helmet } from 'react-helmet';
 
 const PageReads = () => {
     const reads = useLoaderData();
@@ -21,6 +22,9 @@ const PageReads = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Page Read Chart</title>
+            </Helmet>
             <PageRead readBooks={readBooks} />
         </div>
     );
